@@ -59,7 +59,7 @@ namespace energyAnalysis
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.WorkingDirectory = this.epPath;
                 startInfo.FileName = this.epPath + @"\energyplus.exe";
-                startInfo.Arguments = "-w " + weatherFile + " -d " + tmpFolder + " " + inFile;
+                startInfo.Arguments = "-x -w " + weatherFile + " -d " + tmpFolder + " " + inFile;
                 process = Process.Start(startInfo);
                 logger.log("Process '" + process.ProcessName + "' with id " + process.Id + " started");
                 process.WaitForExit();
